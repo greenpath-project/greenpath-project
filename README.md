@@ -1,4 +1,3 @@
-# Green Path Project
+# Etudes et analyses pour le projet Carbon
 
-
-https://twitter.com/GreenPathApp
+Ce repository contiendra différents tests pour déterminer les technologies utilisées sur la partie mobile du projet.

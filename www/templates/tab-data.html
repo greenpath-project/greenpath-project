@@ -1,0 +1,19 @@
+<ion-view view-title="Datas">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="data in datas" type="item-text-wrap" href="#/tab/datas/{{data.id}}">
+        <p>Data id: {{data.id}}</p>
+        <p>Airquality1: {{data.airquality1}}</p>
+        <p>Airquality2: {{data.airquality2}}</p>
+        <p>Temperature: {{data.temperature}}</p>
+        <p>Humidity: {{data.humidity}}</p>
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(data)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
