@@ -1,0 +1,33 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+    <Page.actionBar>
+        <ActionBar title="GreenPath" icon="">
+            <NavigationButton text="Back" icon="" tap="" />
+            <ActionBar.actionItems>
+                <ActionItem icon="" text="Sensors" tap="" ios.position="left" />
+                <ActionItem icon="" text="Map" tap="" ios.position="left" />
+                <ActionItem icon="" text="Settings" tap="" ios.position="right" />
+            </ActionBar.actionItems>
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout>
+        <Button id="gpsBtn" text="GPS On" tap="gpsAction" />
+        <Button id="gpsBtn" text="GPS Off" tap="stopGpsAction" />
+        <Button id="btBtn" text="Bluetooth Scan!" tap="bluetoothScanAction" />
+        <Button id="sensorsBtn" text="Get sensors" tap="" />
+        <Label id="gpsLabelStatus" text="" textWrap="true" />
+        <Label id="gpsLabelLatitude" text="" textWrap="true" />
+        <Label id="gpsLabelLongitude" text="" textWrap="true" />
+        <Label id="gpsLabelSpeed" text="" textWrap="true" />
+        <Label text="Scanned devices :" textWrap="true" />
+        <ListView items="{{ items }}" id="deviceList">
+            <ListView.itemTemplate>
+                <StackLayout col="2" orientation="horizontal">
+                  <Label text="{{ title }}"/>
+                  <Label text=" || "/>
+                  <Label text="{{ address }}" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </StackLayout>
+</Page>

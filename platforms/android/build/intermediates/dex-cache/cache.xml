@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/opt/android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/build/intermediates/pre-dexed/nativescript-geolocation/debug/support-annotations-22.2.1-45b1a22d8827d174b6347571d077852096087849.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/build/intermediates/pre-dexed/debug/classes-f0c2cdbcc65f0c5a21c0c75447bc5334bb045d2f.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/lib/Android/support-v4-r13.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3fe75433da602500cc71fcc1c46e5550291dd45d">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/build/intermediates/pre-dexed/debug/support-v4-r13-78ef2c23bfae3529972306f44cb1d81f3fac46e7.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/libs/widgets.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/build/intermediates/pre-dexed/nativescript-geolocation/debug/widgets-e620dc119ef4307ba62d8356a324986ae3df9daa.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/build/intermediates/pre-dexed/debug/classes-2c4498506ff937f53c9a10c75bfae8f50920ed16.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/libs/widgets.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/build/intermediates/pre-dexed/debug/widgets-0c4f391da5d20d1a957b875edaab866efe11f292.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/lib/Android/nativescript.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="52cbaa533074e6123ed418a6230370de7d5e51c7">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/build/intermediates/pre-dexed/debug/nativescript-f1adad62dbc9fbcf484c77262e71225b650e6e30.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/libs/nativescript.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/build/intermediates/pre-dexed/nativescript-geolocation/debug/nativescript-e53ab726acbd9282b48faec90347252596a1fd96.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/lib/Android/android-support-lib-bindings.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2602bdfb8399f4ba65a7c3862bf59505c7967b73">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/build/intermediates/pre-dexed/debug/android-support-lib-bindings-2a92e70c98dfc673e6d5e3b0909c6dc5bd34ddfe.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/build/intermediates/pre-dexed/nativescript-geolocation/debug/classes-8773ea168173cb2cca214ccc7fc092be899103c8.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/lib/Android/android-support-v4.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3e4e879d0b3dc11f2feb3f55e77e3b5bd82c4a28">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/tests/maps-master/platforms/android/build/intermediates/pre-dexed/debug/android-support-v4-66a24c80809b38c908029b6bc8c2c7cfc255b60d.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/build/intermediates/pre-dexed/nativescript-geolocation/debug/internal_impl-22.2.1-66712d5523c7cd22986771bb1d4be19bfa713448.jar" />
+    </item>
+    <item
+        jar="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/laxtop/EPSI/Projets/nativescript/greenpath/platforms/android/build/intermediates/pre-dexed/nativescript-geolocation/debug/classes-eb86b594d2eb61c4b34f29ed66dab38dbeac4ff8.jar" />
+    </item>
+
+</items>
