@@ -16,7 +16,7 @@ function pageLoaded(args) {
 }
 
 
-var watchid;
+var watchId;
 
 function gpsAction(args) {
     var sender = args.object;
