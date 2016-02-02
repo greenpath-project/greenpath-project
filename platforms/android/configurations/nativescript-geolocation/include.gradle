@@ -1,7 +1,0 @@
-android { 
-	productFlavors {
-		"nativescript-geolocation" {
-			dimension "nativescriptgeolocation"
-		}
-	}
-}
