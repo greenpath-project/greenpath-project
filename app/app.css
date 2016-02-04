@@ -1,1 +1,27 @@
-﻿
+﻿Page {
+    background-color: white;
+    font-size: 17;
+}
+Image {
+    margin-top: 20;
+    margin-left: 40;
+    margin-right: 40;
+    margin-bottom: 20;
+}
+Button {
+    margin: 10;
+    padding: 25;
+}
+
+#title {
+    margin-top: 40;
+    text-align: center;
+    font-size: 40;
+}
+
+.ButtonParameter {
+    margin: 2;
+    margin-left: 40;
+    margin-right: 40;
+    padding: 2;
+}
