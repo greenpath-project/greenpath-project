@@ -11,5 +11,5 @@ exports.openParameter = function () {
 
 exports.openMap = function () {
     var topmost = frameModule.topmost();
-    alert("Coming Soon !!!");
+    topmost.navigate("views/map/map");
 };

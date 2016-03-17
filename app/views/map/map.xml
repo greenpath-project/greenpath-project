@@ -1,0 +1,11 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
+  <GridLayout rows="auto,*" >
+    <GridLayout row="0" rows="*,*" columns="*,*" >
+     <Button text="Show" tap="Show" row="0" col="0" colSpan="1" />
+     <Button text="Center" tap="GetCenter" row="0" col="1" colSpan="2"/>
+     <Button text="Check" tap="CheckHasFineLocationPermission" row="1" col="0" colSpan="1" />
+     <Button text="Request" tap="RequestFineLocationPermission" row="1" col="1" colSpan="2" />
+   </GridLayout>
+   <Button text="Back To Menu" tap="openMenu" row="1" colSpan="4" verticalAlignment="bottom"/>
+ </GridLayout>
+</Page>
