@@ -112,18 +112,25 @@ function bluetoothOnTap(args){
 
 function sendDataAction(args) {
     console.log("Send Data Action - Test");
+    fetchModule.fetch("http://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({title: "Benoit Le BG", body: "Benoit est un vrai BG OMG !", userId: 1})
+    })
+    .then(function(response) {
+        alert({title: "POST Response", message: JSON.stringify(response), okButtonText: "Close"});
+    }, function(error) {
+        console.log(JSON.stringify(error));
+    })
 }
 
 function pullDataAction(args) {
     console.log("Pull Data Action - Test");
-    fetchModule.fetch("http://jsonplaceholder.typicode.com/users/2", {
-        method: "GET"
-    })
-    .then(function(response) {
-        console.log(JSON.stringify(response._bodyInit.name));
-    }, function(error) {
-        console.log(JSON.stringify(error));
-    })
+    fetchModule.fetch('http://jsonplaceholder.typicode.com/users/7').then(function(response) { 
+        return response.json();
+    }).then(function(json) {
+        console.log(JSON.stringify(json)); 
+    });
 }
 
 exports.openMenu = function () {
