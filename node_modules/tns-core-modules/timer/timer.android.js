@@ -11,9 +11,10 @@ function createHandlerAndGetId() {
 function setTimeout(callback, milliseconds) {
     if (milliseconds === void 0) { milliseconds = 0; }
     var id = createHandlerAndGetId();
+    var zoneBound = zonedCallback(callback);
     var runnable = new java.lang.Runnable({
         run: function () {
-            callback();
+            zoneBound();
             if (timeoutCallbacks[id]) {
                 delete timeoutCallbacks[id];
             }
@@ -37,9 +38,10 @@ function setInterval(callback, milliseconds) {
     if (milliseconds === void 0) { milliseconds = 0; }
     var id = createHandlerAndGetId();
     var handler = timeoutHandler;
+    var zoneBound = zonedCallback(callback);
     var runnable = new java.lang.Runnable({
         run: function () {
-            callback();
+            zoneBound();
             if (timeoutCallbacks[id]) {
                 handler.postDelayed(runnable, long(milliseconds));
             }

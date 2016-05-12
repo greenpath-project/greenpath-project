@@ -115,6 +115,11 @@ declare module "ui/action-bar" {
          * Gets or sets the icon of the action item.
          */
         icon: string;
+        
+        /**
+         * Gets or sets the custom action view of the action item.
+         */
+        actionView: view.View;
 
         /**
          * Gets or sets the visibility of the action item.
@@ -125,6 +130,11 @@ declare module "ui/action-bar" {
          * Gets the action bar that contains the action item.
          */
         actionBar: ActionBar;
+
+        /**
+         * Gets the page that contains the action item.
+         */
+        page: pages.Page;
 
         /**
          * A basic method signature to hook an event listener (shortcut alias to the addEventListener method).

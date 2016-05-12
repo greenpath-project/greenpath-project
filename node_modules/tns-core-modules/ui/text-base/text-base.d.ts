@@ -40,8 +40,6 @@ declare module "ui/text-base" {
          */
         formattedText: formattedString.FormattedString;
 
-        _onTextPropertyChanged(data: dependencyObservable.PropertyChangeData);
-
         /**
          * Called for every child element declared in xml.
          * This method will add a child element (value) to current element.
@@ -49,6 +47,8 @@ declare module "ui/text-base" {
          * @param value - Value of the element.
          */
         _addChildFromBuilder(name: string, value: any): void;
+
+        
     }
 
     /**

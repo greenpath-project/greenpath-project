@@ -4,6 +4,9 @@ var appModule = require("application");
 var observable = require("data/observable").Observable;
 var observableArray = require("data/observable-array").ObservableArray;
 var frameModule = require("ui/frame");
+var bluetoothManager = appModule.android.context.getSystemService(android.content.Context.BLUETOOTH_SERVICE);
+var bluetoothAdapter = bluetoothManager.getAdapter();
+var array = new observableArray();
 
 var pageData = new observable({
     items: new observableArray([
@@ -58,9 +61,6 @@ function stopGpsAction(args) {
 }
 
 function bluetoothScanAction(args) {
-    var bluetoothManager = appModule.android.context.getSystemService(android.content.Context.BLUETOOTH_SERVICE);
-    var bluetoothAdapter = bluetoothManager.getAdapter();
-    var array = new observableArray();
     var page = args.object;
 
     if (bluetoothAdapter.isEnabled()){
@@ -85,6 +85,27 @@ function bluetoothScanAction(args) {
         console.log("scan finished.");
         appModule.android.unregisterBroadcastReceiver(android.bluetooth.BluetoothDevice.ACTION_FOUND);
         appModule.android.unregisterBroadcastReceiver(android.bluetooth.BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
+    });  
+}
+
+function bluetoothOnTap(args){
+    var index = args.index;
+    var tappedMac = pageData.items.getItem(index).address;
+    var tappedDevice = bluetoothAdapter.getRemoteDevice(tappedMac);
+
+    tappedDevice.createBond();
+
+    appModule.android.registerBroadcastReceiver(android.bluetooth.BluetoothDevice.ACTION_BOND_STATE_CHANGED, function onReceiveCallback(context, intent){
+        var extra = intent.getIntExtra(android.bluetooth.BluetoothDevice.EXTRA_BOND_STATE, -1);
+        if(extra == android.bluetooth.BluetoothDevice.BOND_BONDING){
+            console.log("Pairing with " + tappedDevice.getName());
+        }
+        if(extra == android.bluetooth.BluetoothDevice.BOND_NONE){
+            console.log("Not paired with " + tappedDevice.getName());
+        }
+        if(extra == android.bluetooth.BluetoothDevice.BOND_BONDED){
+            console.log("Paired with " + tappedDevice.getName());
+        }
     });
 }
 
@@ -97,3 +118,4 @@ exports.pageLoaded = pageLoaded;
 exports.gpsAction = gpsAction;
 exports.stopGpsAction = stopGpsAction;
 exports.bluetoothScanAction = bluetoothScanAction;
+exports.bluetoothOnTap = bluetoothOnTap;
