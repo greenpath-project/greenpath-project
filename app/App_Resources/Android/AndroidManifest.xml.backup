@@ -17,7 +17,15 @@
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
+<<<<<<< HEAD
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+  	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
+  	<uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+=======
+
+>>>>>>> 18a2d2bc2859f6d002d21c827c67592adfc264a4
 	<application
 		android:name="com.tns.NativeScriptApplication"
 		android:allowBackup="true"

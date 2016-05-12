@@ -29,6 +29,26 @@ function escapeRegexSymbols(source) {
     return source.replace(escapeRegex, "\\$&");
 }
 exports.escapeRegexSymbols = escapeRegexSymbols;
+function convertString(value) {
+    var result;
+    if (value.trim() === "") {
+        result = value;
+    }
+    else {
+        var valueAsNumber = +value;
+        if (!isNaN(valueAsNumber)) {
+            result = valueAsNumber;
+        }
+        else if (value && (value.toLowerCase() === "true" || value.toLowerCase() === "false")) {
+            result = value.toLowerCase() === "true" ? true : false;
+        }
+        else {
+            result = value;
+        }
+    }
+    return result;
+}
+exports.convertString = convertString;
 var layout;
 (function (layout) {
     var MODE_SHIFT = 30;

@@ -1,4 +1,5 @@
 var types = require("utils/types");
+var http = require("http");
 var requestIdCounter = 0;
 var pendingRequests = {};
 var utils;
@@ -45,7 +46,7 @@ function onRequestComplete(requestId, result) {
         var pair;
         for (i = 0; i < length; i++) {
             pair = jHeaders.get(i);
-            headers[pair.key] = pair.value;
+            http.addHeader(headers, pair.key, pair.value);
         }
     }
     callbacks.resolveCallback({

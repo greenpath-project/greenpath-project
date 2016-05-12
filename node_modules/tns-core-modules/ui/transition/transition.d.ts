@@ -9,7 +9,7 @@ declare module "ui/transition" {
     }
 
     export class Transition {
-        constructor(duration: number, curve: any);
+        constructor(duration: number, nativeCurve: any);
         public getDuration(): number;
         public getCurve(): any;
         public animateIOSTransition(containerView: any, fromView: any, toView: any, operation: any, completion: (finished: boolean) => void): void;

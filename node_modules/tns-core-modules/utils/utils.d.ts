@@ -138,7 +138,7 @@ declare module "utils/utils" {
      * Module with ios specific utilities.
      */
     module ios {
-        export function setTextDecorationAndTransform(view: any, decoration: string, transform: string);
+        export function setTextDecorationAndTransform(view: any, decoration: string, transform: string, letterSpacing : number);
         export function setWhiteSpace(view, value: string, parentView?: any);
         export function setTextAlignment(view, value: string);
 
@@ -228,4 +228,10 @@ declare module "utils/utils" {
      * @param source The original value. 
      */
     export function escapeRegexSymbols(source: string): string
+    
+    /**
+     * Converts string value to number or boolean.
+     * @param value The original value. 
+     */
+    export function convertString(value: string): any    
 }
