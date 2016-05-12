@@ -5,6 +5,8 @@
         <Button cssClass="ButtonParameter" text="GPS Off" tap="stopGpsAction" />
         <Button cssClass="ButtonParameter" text="Bluetooth Scan!" tap="bluetoothScanAction" />
         <Button cssClass="ButtonParameter" text="Get sensors" tap="" />
+        <Button cssClass="ButtonParameter" text="Send data to main" tap="sendDataAction" />
+        <Button cssClass="ButtonParameter" text="Pull data from main" tap="pullDataAction" />
         <Label id="gpsLabelStatus" text="" textWrap="true" />
         <Label id="gpsLabelLatitude" text="" textWrap="true" />
         <Label id="gpsLabelLongitude" text="" textWrap="true" />

@@ -7,6 +7,7 @@ var frameModule = require("ui/frame");
 var bluetoothManager = appModule.android.context.getSystemService(android.content.Context.BLUETOOTH_SERVICE);
 var bluetoothAdapter = bluetoothManager.getAdapter();
 var array = new observableArray();
+var fetchModule = require("fetch");
 
 var pageData = new observable({
     items: new observableArray([
@@ -109,6 +110,22 @@ function bluetoothOnTap(args){
     });
 }
 
+function sendDataAction(args) {
+    console.log("Send Data Action - Test");
+}
+
+function pullDataAction(args) {
+    console.log("Pull Data Action - Test");
+    fetchModule.fetch("http://jsonplaceholder.typicode.com/users/2", {
+        method: "GET"
+    })
+    .then(function(response) {
+        console.log(JSON.stringify(response._bodyInit.name));
+    }, function(error) {
+        console.log(JSON.stringify(error));
+    })
+}
+
 exports.openMenu = function () {
     var topmost = frameModule.topmost();
     topmost.navigate("views/main/main-page");
@@ -119,3 +136,5 @@ exports.gpsAction = gpsAction;
 exports.stopGpsAction = stopGpsAction;
 exports.bluetoothScanAction = bluetoothScanAction;
 exports.bluetoothOnTap = bluetoothOnTap;
+exports.sendDataAction = sendDataAction;
+exports.pullDataAction = pullDataAction;
