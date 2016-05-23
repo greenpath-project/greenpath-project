@@ -1,8 +1,0 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
-    <StackLayout orientation="vertical">
-        <Label id="title" text="GreenPath" />
-        <Image src="~/img/logo.jpg" horizontalAlignment="center"/>
-        <Button text="Paramétrage capteur" tap="openParameter"/>
-        <Button text="Consulter la carte" tap="openMap"/>
-    </StackLayout>
-</Page>
