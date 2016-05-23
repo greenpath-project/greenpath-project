@@ -40,12 +40,13 @@ function gpsAction(args) {
                 gpsLabelLongitude.text = "Longitude: "+loc.longitude;
                 gpsLabelSpeed.text = "Speed: "+loc.speed;
                 console.log("Logged a loc");
+                sendDataAction(loc.latitude, loc.longitude, 10, 10, 10, 10);
             }
         }, 
         function(e){
             console.log("Error: " + e.message);
         }, 
-        {desiredAccuracy: 3, updateDistance: 0, updateTime: 500});
+        {desiredAccuracy: 3, updateDistance: 0, updateTime: 1000});
     } else {
         geolocation.enableLocationRequest();
     }
@@ -110,15 +111,15 @@ function bluetoothOnTap(args){
     });
 }
 
-function sendDataAction(args) {
+function sendDataAction(lat, lng, temperature, humidite, son, co2) {
     console.log("Send Data Action - Test");
-    fetchModule.fetch("http://jsonplaceholder.typicode.com/posts", {
+    fetchModule.fetch("http://5.135.186.123:8080/api/captures", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({title: "Benoit Le BG", body: "Benoit est un vrai BG OMG !", userId: 1})
+        body: JSON.stringify({lat: lat,lng: lng,temperature: temperature,humidite: humidite,son: son,co2: co2})
     })
     .then(function(response) {
-        alert({title: "POST Response", message: JSON.stringify(response), okButtonText: "Close"});
+        console.log({title: "POST Response", message: JSON.stringify(response), okButtonText: "Close"});
     }, function(error) {
         console.log(JSON.stringify(error));
     })
