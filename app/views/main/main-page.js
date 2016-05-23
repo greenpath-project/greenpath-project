@@ -134,11 +134,6 @@ function pullDataAction(args) {
     });
 }
 
-exports.openMenu = function () {
-    var topmost = frameModule.topmost();
-    topmost.navigate("views/main/main-page");
-};
-
 exports.pageLoaded = pageLoaded;
 exports.gpsAction = gpsAction;
 exports.stopGpsAction = stopGpsAction;
