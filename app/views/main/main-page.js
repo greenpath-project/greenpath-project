@@ -8,12 +8,10 @@ var bluetoothManager = appModule.android.context.getSystemService(android.conten
 var bluetoothAdapter = bluetoothManager.getAdapter();
 var array = new observableArray();
 var fetchModule = require("fetch");
+var switchModule = require("ui/switch");
 
-var pageData = new observable({
-    items: new observableArray([
-        {}
-    ])
-});
+var pageData = new observable();
+pageData.set("items", new observableArray([{}]));
 
 function pageLoaded(args) {
     var page = args.object;
@@ -23,13 +21,23 @@ function pageLoaded(args) {
 
 var watchId;
 
+function gpsTap(args){
+    if (args.object.checked){
+        console.log("[DEBUG] - GPS ACTION");
+        gpsAction(args);
+    } else {
+        console.log("[DEBUG] - STOP GPS ACTION");
+        stopGpsAction(args);
+    }
+}
+
 function gpsAction(args) {
     var sender = args.object;
     var parent = sender.parent;
-    var gpsLabelStatus = parent.getViewById("gpsLabelStatus");
-    var gpsLabelLatitude = parent.getViewById("gpsLabelLatitude");
-    var gpsLabelLongitude = parent.getViewById("gpsLabelLongitude");
-    var gpsLabelSpeed = parent.getViewById("gpsLabelSpeed");
+    var gpsLabelStatus = parent.parent.getViewById("gpsLabelStatus");
+    var gpsLabelLatitude = parent.parent.getViewById("gpsLabelLatitude");
+    var gpsLabelLongitude = parent.parent.getViewById("gpsLabelLongitude");
+    var gpsLabelSpeed = parent.parent.getViewById("gpsLabelSpeed");
 
     if (geolocation.isEnabled()) {
         gpsLabelStatus.text = "Status: Watching GPS data...";
@@ -56,7 +64,7 @@ function stopGpsAction(args) {
     if (watchId) {
         var sender = args.object;
         var parent = sender.parent;
-        var gpsLabelStatus = parent.getViewById("gpsLabelStatus");
+        var gpsLabelStatus = parent.parent.getViewById("gpsLabelStatus");
         gpsLabelStatus.text = "Status : Off.";
         geolocation.clearWatch(watchId);
     }
@@ -141,3 +149,4 @@ exports.bluetoothScanAction = bluetoothScanAction;
 exports.bluetoothOnTap = bluetoothOnTap;
 exports.sendDataAction = sendDataAction;
 exports.pullDataAction = pullDataAction;
+exports.gpsTap = gpsTap;
