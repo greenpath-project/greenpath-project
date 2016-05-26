@@ -17,25 +17,26 @@
     </TabViewItem>
     <TabViewItem iconSource="~/img/bt-disconnected.png">
       <TabViewItem.view>
-        <StackLayout class="tab-content">
-          <Button cssClass="ButtonParameter" text="Bluetooth Scan!" tap="bluetoothScanAction" />
-          <Label text="Scanned devices :" textWrap="true" />
-           <ListView items="{{ items }}" itemTap="bluetoothOnTap" id="deviceList">
+        <DockLayout class="tab-content">
+          <Button dock="bottom" text="bottom" horizontalAlignement="bottom" cssClass="BluetoothButton" text="Start Bluetooth Scan" tap="bluetoothScanAction" />
+          <Label cssClass="lbl" dock="top" text="top" text="Scanned devices :" textWrap="true" />
+           <ListView dock="top" text="top" items="{{ items }}" itemTap="bluetoothOnTap" id="deviceList">
             <ListView.itemTemplate>
-              <StackLayout col="2" orientation="horizontal">
-                <Label text="{{ title }}"/>
-                <Label text=" || "/>
-                <Label text="{{ address }}" />
+              <StackLayout orientation="horizontal">
+                <Label cssClass="list_left" text="Name : "/>
+                <Label cssClass="list" text="{{ title }}"/>
+                <Label cssClass="list_left" text="Address : "/>
+                <Label cssClass="list" text="{{ address }}" />
               </StackLayout>
             </ListView.itemTemplate>
           </ListView>
-        </StackLayout>
+        </DockLayout>
       </TabViewItem.view>
     </TabViewItem>
     <TabViewItem iconSource="~/img/map.png">
       <TabViewItem.view>
         <StackLayout class="tab-content">
-          <WebView src="http://openlayers.org/en/v3.2.1/examples/simple.html" />
+          <WebView src="http://greenpath.jumpt.fr/#/map/true" />
         </StackLayout>
       </TabViewItem.view>
     </TabViewItem>
