@@ -1,0 +1,30 @@
+<StackLayout class="tab-content">
+  <DockLayout class="switch-stack" orientation="horizontal">
+    <Label id="gpsSwitchlabel" dock="left" text="Send data:"/>
+    <Switch id="gpsSwitch" checked="false" dock="right" propertyChange="gpsTap"/>
+  </DockLayout>
+  <StackLayout class="gpsData-frame">
+    <GridLayout col="1" rows="auto, auto, auto" columns="*, auto" cssClass="data-container">
+      <Label text="GPS State:" cssClass="item-label" />
+      <Label id="gpsLabelStatus" col="1" rowSpan="3" text="Idling" cssClass="item-bold-label" />
+    </GridLayout>
+    <GridLayout col="1" rows="auto, auto, auto" columns="*, auto" cssClass="data-container">
+      <Label text="Latitude" cssClass="item-label" />
+      <Label row="1" text="Last sent :" cssClass="item-details-label" />
+      <Label id="latitude-last-sent" row="2" text="Never" cssClass="item-details-label" />
+      <Label id="gpsLabelLatitude" col="1" rowSpan="3" text="" cssClass="item-bold-label" />
+    </GridLayout>
+    <GridLayout col="1" rows="auto, auto, auto" columns="*, auto" cssClass="data-container">
+      <Label text="Longitude" cssClass="item-label" />
+      <Label row="1" text="Last sent :" cssClass="item-details-label" />
+      <Label id="longitude-last-sent" row="2" text="Never" cssClass="item-details-label" />
+      <Label id="gpsLabelLongitude" col="1" rowSpan="3" text="" cssClass="item-bold-label" />
+    </GridLayout>
+    <GridLayout col="1" rows="auto, auto, auto" columns="*, auto" cssClass="data-container">
+      <Label text="Speed" cssClass="item-label" />
+      <Label row="1" text="Last sent :" cssClass="item-details-label" />
+      <Label id="speed-last-sent" row="2" text="Never" cssClass="item-details-label" />
+      <Label id="gpsLabelSpeed" col="1" rowSpan="3" text="" cssClass="item-bold-label" />
+    </GridLayout>
+  </StackLayout>
+</StackLayout>

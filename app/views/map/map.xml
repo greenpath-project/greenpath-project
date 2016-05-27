@@ -1,0 +1,3 @@
+<StackLayout class="tab-content">
+	<WebView src="http://greenpath.jumpt.fr/#/map/nointerface" />
+</StackLayout>
