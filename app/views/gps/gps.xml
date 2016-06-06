@@ -1,4 +1,4 @@
-<StackLayout class="tab-content">
+<StackLayout loaded="pageLoaded" class="tab-content">
   <DockLayout class="switch-stack" orientation="horizontal">
     <Label id="gpsSwitchlabel" dock="left" text="Send data:"/>
     <Switch id="gpsSwitch" checked="false" dock="right" propertyChange="gpsTap"/>
@@ -25,6 +25,12 @@
       <Label row="1" text="Last sent :" cssClass="item-details-label" />
       <Label id="speed-last-sent" row="2" text="Never" cssClass="item-details-label" />
       <Label id="gpsLabelSpeed" col="1" rowSpan="3" text="" cssClass="item-bold-label" />
+    </GridLayout>
+    <GridLayout dock="bottom" col="1" rows="auto, auto, auto" columns="*, auto" cssClass="data-container">
+      <Label text="Main server" cssClass="item-label" />
+      <Label row="1" text="Last check :" cssClass="item-details-label" />
+      <Label id="server-last-check" row="2" text="{{ serverStatusCounter }}" cssClass="item-details-label" />
+      <Label id="serverCheckLabel" col="1" rowSpan="3" text="{{ serverStatus }}" cssClass="item-bold-label" />
     </GridLayout>
   </StackLayout>
 </StackLayout>

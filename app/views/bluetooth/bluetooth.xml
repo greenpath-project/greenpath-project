@@ -1,4 +1,4 @@
-<DockLayout class="tab-content">
+<DockLayout loaded="pageLoaded" class="tab-content">
   <Button dock="bottom" text="bottom" horizontalAlignement="bottom" cssClass="BluetoothButton" text="Start Bluetooth Scan" tap="bluetoothScanAction" />
   <Label cssClass="lbl" dock="top" text="top" text="Scanned devices :" textWrap="true" />
   <ListView dock="top" text="top" items="{{ items }}" itemTap="bluetoothOnTap" id="deviceList">
