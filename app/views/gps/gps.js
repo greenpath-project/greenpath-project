@@ -133,5 +133,4 @@ exports.pageLoaded = pageLoaded;
 exports.gpsAction = gpsAction;
 exports.stopGpsAction = stopGpsAction;
 exports.sendDataAction = sendDataAction;
-exports.pullDataAction = pullDataAction;
 exports.gpsTap = gpsTap;
