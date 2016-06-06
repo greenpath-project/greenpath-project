@@ -96,7 +96,7 @@ function stopGpsAction(args) {
 
 function sendDataAction(lat, lng, temperature, humidite, son, co2) {
     console.log("Send Data Action - Test");
-    fetchModule.fetch("http://5.135.186.123:8080/api/captures", {
+    fetchModule.fetch("http://greenpath.jumpt.fr/api/captures", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({lat: lat,lng: lng,temperature: temperature,humidite: humidite,son: son,co2: co2})
@@ -106,15 +106,6 @@ function sendDataAction(lat, lng, temperature, humidite, son, co2) {
     }, function(error) {
         console.log(JSON.stringify(error));
     })
-}
-
-function pullDataAction(args) {
-    console.log("Pull Data Action - Test");
-    fetchModule.fetch('http://jsonplaceholder.typicode.com/users/7').then(function(response) { 
-        return response.json();
-    }).then(function(json) {
-        console.log(JSON.stringify(json)); 
-    });
 }
 
 var counter = 10;
