@@ -47,9 +47,15 @@ Button {
     margin-top: 20;
 }
 .gpsData-frame {
+    background-color: #ecf0f1;
     margin-top: 20;
 }
 .data-container {
+    margin: 8 16 8 11;
+}
+
+.test-server-container {
+    border-top: 10px solid #313030;
     margin: 8 16 8 11;
 }
 
@@ -68,4 +74,9 @@ Button {
 .item-details-label {
     font-size: 12;
     color: #828282;
+}
+
+.test-server-container {
+    margin: 8 16 8 11;
+    width: 100%;
 }

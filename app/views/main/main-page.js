@@ -12,10 +12,13 @@ var switchModule = require("ui/switch");
 var dialogs = require("ui/dialogs");
 var activityIndicatorModule = require("ui/activity-indicator");
 var imageModule = require("ui/image");
+var http = require("http");
 
 var pageData = new observable();
 pageData.set("items", new observableArray([{}]));
 pageData.set("bt-scanning", false);
+pageData.set("serverStatus", "Offline");
+pageData.set("serverStatusCounter", 0);
 
 function pageLoaded(args) {
     var page = args.object;
@@ -27,10 +30,8 @@ var watchId;
 
 function gpsTap(args){
     if (args.object.checked){
-        console.log("[DEBUG] - GPS ACTION");
         gpsAction(args);
     } else {
-        console.log("[DEBUG] - STOP GPS ACTION");
         stopGpsAction(args);
     }
 }
@@ -135,6 +136,7 @@ function bluetoothOnTap(args){
     appModule.android.unregisterBroadcastReceiver(android.bluetooth.BluetoothDevice.ACTION_BOND_STATE_CHANGED);
     var index = args.index;
     var tappedMac = pageData.items.getItem(index).address;
+    console.log(tappedMac);
     var tappedDevice = bluetoothAdapter.getRemoteDevice(tappedMac);
 
     tappedDevice.createBond();
@@ -175,6 +177,27 @@ function pullDataAction(args) {
         console.log(JSON.stringify(json)); 
     });
 }
+var counter = 10;
+function testServer(){
+    if(counter >= 10){
+        http.request({ url: "http://greenpath.jumpt.fr/", method: "GET" }).then(function (response) {
+            if(response.statusCode == "200"){
+                pageData.set("serverStatus", "Online");
+            } else {
+                pageData.set("serverStatus", "Offline");
+            }
+        }, function (e) {
+            pageData.set("serverStatus", "Offline");
+        });
+        counter = 0;
+    } else {
+        pageData.set("serverStatusCounter", counter);
+        counter++;
+    }
+    setTimeout(testServer, 1000); 
+}
+setTimeout(testServer, 1000); 
+
 
 exports.pageLoaded = pageLoaded;
 exports.gpsAction = gpsAction;
