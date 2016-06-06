@@ -10,6 +10,6 @@ if(platform.device.os === platform.platformNames.android) {
     }
 }
 
-application.mainModule = "views/main/main-page";
+application.mainModule = "views/main-page";
 application.cssFile = "./app.css";
 application.start();
